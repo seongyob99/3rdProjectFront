@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 export default function CTASection() {
+  const navigate = useNavigate();
+
   return (
     <motion.div
       className="h-full flex flex-col items-center justify-center px-4 text-center"
@@ -13,12 +16,12 @@ export default function CTASection() {
       <p className="text-lg text-gray-300 mb-8">
         20개의 질문으로 당신의 생각을 또 맞춰볼까요?
       </p>
-      <a
-        href="/start"
-        className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition"
+      <button
+        onClick={() => navigate('/question')}
+        className="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg transition"
       >
         시작하기
-      </a>
+      </button>
     </motion.div>
   );
 }

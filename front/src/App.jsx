@@ -1,12 +1,17 @@
 import Header from './components/Header';
-import MainScrollPage from './pages/MainScrollPage'; // ✅ 이거로 변경!
+import MainScrollPage from './pages/MainScrollPage';
+import QuestionCard from './components/QuestionCard';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <MainScrollPage />
-    </>
+      <Routes>
+        <Route path="/" element={<MainScrollPage />} />
+        <Route path="/question" element={<QuestionCard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
