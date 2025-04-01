@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import '../styles/QuestionCard.css';
+import '../styles/utils.css';
 
 const dummyQuestions = [
   "당신이 생각한 것은 살아있나요?",
@@ -20,32 +23,33 @@ export default function QuestionCard() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4">
-      <div className="text-lg text-gray-400 mb-2">
+    <div className="question-wrapper bg-black">
+      <div className="question-progress">
         질문 {step + 1} / {dummyQuestions.length}
       </div>
 
-      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 max-w-xl">
-        {dummyQuestions[step]}
-      </h2>
-
-      <div className="flex space-x-4">
-        <button
-          className="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition"
-          onClick={() => handleAnswer("예")}
+      {/* 질문 변경 애니메이션만 유지 */}
+      <AnimatePresence mode="wait">
+        <motion.h2
+          key={step}
+          className="question-title"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
         >
+          {dummyQuestions[step]}
+        </motion.h2>
+      </AnimatePresence>
+
+      <div className="question-button-group">
+        <button className="primary-button btn-blue" onClick={() => handleAnswer("예")}>
           예
         </button>
-        <button
-          className="px-6 py-3 bg-red-600 rounded-lg hover:bg-red-700 transition"
-          onClick={() => handleAnswer("아니오")}
-        >
+        <button className="primary-button btn-red" onClick={() => handleAnswer("아니오")}>
           아니오
         </button>
-        <button
-          className="px-6 py-3 bg-gray-600 rounded-lg hover:bg-gray-700 transition"
-          onClick={() => handleAnswer("모름")}
-        >
+        <button className="primary-button btn-gray" onClick={() => handleAnswer("모름")}>
           모름
         </button>
       </div>

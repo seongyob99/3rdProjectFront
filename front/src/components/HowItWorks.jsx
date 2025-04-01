@@ -1,4 +1,8 @@
+// components/HowItWorks
+
 import { motion } from 'framer-motion';
+import '../styles/HowItWorks.css';
+import '../styles/utils.css'; // ✅ 공통 유틸 추가
 
 export default function HowItWorks() {
   const steps = [
@@ -30,21 +34,18 @@ export default function HowItWorks() {
 
   return (
     <motion.div
-      className="flex flex-col items-center justify-center px-4 text-center"
+      className="section-wrapper"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-3xl font-bold mb-12">어떻게 작동하나요?</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl">
+      <h2 className="section-title">어떻게 작동하나요?</h2>
+      <div className="howitworks-grid">
         {steps.map((step, idx) => (
-          <div
-            key={idx}
-            className="bg-gray-800 rounded-xl p-6 text-left shadow-md hover:shadow-lg transition duration-300"
-          >
-            <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
-            <p className="text-gray-300 text-sm leading-relaxed">{step.description}</p>
+          <div key={idx} className="howitworks-card">
+            <h3 className="howitworks-card-title">{step.title}</h3>
+            <p className="howitworks-card-desc">{step.description}</p>
           </div>
         ))}
       </div>
