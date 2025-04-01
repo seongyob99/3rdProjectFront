@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import '../styles/QuestionCard.css';
 import '../styles/utils.css';
 
@@ -12,13 +13,14 @@ const dummyQuestions = [
 
 export default function QuestionCard() {
   const [step, setStep] = useState(0);
+  const navigate = useNavigate();
 
   const handleAnswer = (answer) => {
     console.log(`Q${step + 1}: ${dummyQuestions[step]} → ${answer}`);
     if (step < dummyQuestions.length - 1) {
       setStep((prev) => prev + 1);
     } else {
-      alert('모든 질문 완료!');
+      navigate('/result'); // ✅ 마지막 질문 후 결과 페이지로 이동
     }
   };
 

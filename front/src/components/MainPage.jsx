@@ -1,31 +1,3 @@
-// // components/MainPage
-// import { useNavigate } from 'react-router-dom';
-// import '../styles/MainPage.css';
-// import '../styles/utils.css'; // ✅ 공통 유틸 스타일 추가
-
-// export default function MainPage() {
-//   const navigate = useNavigate();
-
-//   return (
-//     <section className="section-wrapper">
-//       <h1 className="main-title">
-//         AI가 당신의 생각을 예측합니다
-//       </h1>
-//       <p className="main-description">
-//         20개의 질문을 통해 당신이 떠올린 인물 또는 사물을 <br /> 추론하는
-//         인공지능 기반 웹 서비스입니다.
-//       </p>
-
-//       <button
-//         onClick={() => navigate('/question')}
-//         className="primary-button btn-indigo"
-//       >
-//         시작하기
-//       </button>
-//     </section>
-//   );
-// }
-
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
