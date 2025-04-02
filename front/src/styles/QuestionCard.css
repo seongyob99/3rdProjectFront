@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .question-wrapper {
-  @apply min-h-screen flex flex-col items-center justify-center bg-black text-white px-4;
+  @apply min-h-screen flex flex-col items-center justify-center text-white px-4;
 }
 
 .question-progress {
