@@ -1,5 +1,3 @@
-// components/FeatureCards
-
 import { motion } from 'framer-motion';
 import '../styles/FeatureCards.css';
 import '../styles/utils.css'; // ✅ 공통 유틸 추가

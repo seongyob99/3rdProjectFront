@@ -1,7 +1,7 @@
-// components/Header
+// components/Header.jsx
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/Header.css';
-import '../styles/utils.css'; // ✅ 공통 유틸 추가
+import '../styles/utils.css'; // 공통 유틸 스타일
 
 export default function Header() {
   const navigate = useNavigate();
@@ -25,9 +25,7 @@ export default function Header() {
       </div>
 
       <nav className="header-nav">
-        <button onClick={handleGoHome} className="header-link">
-          홈
-        </button>
+        <button onClick={handleGoHome} className="header-link">홈</button>
         <button
           onClick={() => {
             const el = document.getElementById('intro');

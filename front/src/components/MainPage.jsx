@@ -12,7 +12,7 @@ export default function MainPage() {
     setIsExiting(true);
     setTimeout(() => {
       navigate('/question');
-    }, 400); // 모션 지속시간과 맞춤
+    }, 400);
   };
 
   return (
@@ -25,17 +25,17 @@ export default function MainPage() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <h1 className="main-title">
+          <h1 className="main-title text-white">
             AI가 당신의 생각을 예측합니다
           </h1>
-          <p className="main-description">
+          <p className="main-description text-gray-300">
             20개의 질문을 통해 당신이 떠올린 인물 또는 사물을 <br /> 추론하는
             인공지능 기반 웹 서비스입니다.
           </p>
 
           <button
             onClick={handleStart}
-            className="primary-button btn-indigo"
+            className="primary-button btn-indigo mt-6"
           >
             시작하기
           </button>

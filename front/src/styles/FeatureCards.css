@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .feature-section {
-  @apply bg-black py-24 px-8 text-white;
+  @apply py-24 px-8 text-white;
 }
 
 .feature-grid {
