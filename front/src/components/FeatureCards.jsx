@@ -6,22 +6,22 @@ export default function FeatureCards() {
   const features = [
     {
       title: '간편한 사용',
-      description: ['예 / 아니오 클릭만으로', '누구나 쉽게 참여 가능'],
+      description: ['이미지 업로드 한 번으로', '텍스트 추출 완료'],
       bg: '/black.png',
     },
     {
-      title: 'AI 기반 추론',
-      description: ['딥러닝 모델이', '사용자의 응답을 실시간 분석'],
+      title: 'AI 기반 OCR',
+      description: ['최신 딥러닝 모델이', '이미지 속 글자를 인식'],
       bg: '/blue.png',
     },
     {
-      title: '모바일 최적화',
-      description: ['모든 디바이스에서', '부드럽고 깔끔한 UI 제공'],
+      title: '다양한 이미지 지원',
+      description: ['문서, 명함, 간판 등', '다양한 형식 인식 가능'],
       bg: '/green.png',
     },
     {
-      title: '높은 정확도',
-      description: ['20개 질문 내외로', '대부분의 예측 성공'],
+      title: '높은 인식 정확도',
+      description: ['흐릿한 이미지도', '정확히 텍스트 추출'],
       bg: '/yellow.png',
     },
   ];

@@ -1,21 +1,24 @@
-
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../styles/utils.css';
 
 export default function ResultPage() {
+  const location = useLocation();
   const navigate = useNavigate();
 
+  const resultText = location.state?.resultText || '';
+
   const handleRetry = () => {
-    navigate('/question');
+    navigate('/upload');
   };
 
-  const handleYes = () => {
-    navigate('/answer');
-  };
-
-  const handleNo = () => {
-    navigate('/fail');
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(resultText);
+      alert('텍스트가 복사되었습니다!');
+    } catch (err) {
+      alert('복사에 실패했습니다.');
+    }
   };
 
   return (
@@ -27,7 +30,7 @@ export default function ResultPage() {
         className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
       />
 
-      {/* ✅ 검은 블러 오버레이 추가 (메인 화면처럼) */}
+      {/* ✅ 어두운 오버레이 */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur z-10" />
 
       {/* ✅ 실제 콘텐츠 */}
@@ -38,30 +41,33 @@ export default function ResultPage() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-6 drop-shadow-lg">
-          당신이 생각한 건...
+          텍스트 추출 완료! 🎉
         </h2>
 
-        <div className="bg-gray-900 bg-opacity-90 rounded-2xl shadow-lg p-8 mb-6 w-full max-w-sm">
-          <img
-            src="/pikachu.png"
-            alt="예측 결과"
-            className="w-32 h-32 mx-auto mb-4 object-contain"
-          />
-          <h3 className="text-xl font-semibold">피카츄</h3>
+        <div className="bg-gray-900 bg-opacity-90 rounded-2xl shadow-lg p-6 mb-6 w-full max-w-xl max-h-[60vh] overflow-auto">
+          {resultText ? (
+            <pre className="whitespace-pre-wrap text-left text-sm text-gray-100">
+              {resultText}
+            </pre>
+          ) : (
+            <p className="text-gray-300">추출된 텍스트가 없습니다.</p>
+          )}
         </div>
 
-        <p className="text-lg mb-6 drop-shadow-md">정답인가요?</p>
-
-        <div className="flex space-x-4">
-        <button className="primary-button btn-blue" onClick={handleYes}>맞아요</button>
-          <button className="primary-button btn-red" onClick={handleNo}>아니요</button>
-        </div>
+        {resultText && (
+          <button
+            className="primary-button btn-indigo mb-4"
+            onClick={handleCopy}
+          >
+            텍스트 복사하기
+          </button>
+        )}
 
         <button
-          className="primary-button btn-gray mt-8"
+          className="primary-button btn-gray mt-2"
           onClick={handleRetry}
         >
-          다시 시작하기
+          다른 이미지 업로드하기
         </button>
       </motion.div>
     </div>

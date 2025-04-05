@@ -1,5 +1,5 @@
 // src/pages/StartPage.jsx
-import QuestionCard from '../components/QuestionCard';
+import QuestionCard from '../components/UploadPage';
 
 export default function StartPage() {
     return (

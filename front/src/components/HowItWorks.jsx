@@ -1,5 +1,3 @@
-// components/HowItWorks
-
 import { motion } from 'framer-motion';
 import '../styles/HowItWorks.css';
 import '../styles/utils.css'; // ✅ 공통 유틸 추가
@@ -7,28 +5,28 @@ import '../styles/utils.css'; // ✅ 공통 유틸 추가
 export default function HowItWorks() {
   const steps = [
     {
-      title: '1. 생각하기',
-      description: '사용자가 마음속에 사람/사물을 떠올립니다.',
+      title: '1. 이미지 준비',
+      description: '문서, 명함, 간판 등 텍스트가 포함된 이미지를 준비합니다.',
     },
     {
-      title: '2. 질문 시작',
-      description: '시스템이 20개의 질문을 순차적으로 제시합니다.',
+      title: '2. 업로드',
+      description: '이미지를 업로드하거나 드래그 앤 드롭으로 올립니다.',
     },
     {
-      title: '3. 응답하기 ',
-      description: "사용자는 질문에 대해 '예 / 아니오 / 모름'으로 응답합니다.",
+      title: '3. 텍스트 추출',
+      description: 'AI가 이미지 속 텍스트를 자동으로 인식합니다.',
     },
     {
-      title: '4. 추론하기',
-      description: '모든 응답은 내부 추론 알고리즘에 입력됩니다.',
+      title: '4. 결과 확인',
+      description: '추출된 텍스트를 확인하고 복사할 수 있습니다.',
     },
     {
-      title: '5. 예측 결과',
-      description: '가장 가능성 높은 후보를 예측하여 결과를 보여줍니다.',
+      title: '5. 편집 및 저장',
+      description: '필요한 텍스트만 선택하여 저장하거나 다른 곳에 활용합니다.',
     },
     {
-      title: '6. 피드백',
-      description: '결과가 맞았는지 확인 후 다시 시작할 수 있습니다.',
+      title: '6. 다시 시도',
+      description: '다른 이미지를 업로드하여 반복적으로 이용할 수 있습니다.',
     },
   ];
 

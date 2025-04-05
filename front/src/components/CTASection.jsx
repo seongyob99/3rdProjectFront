@@ -1,4 +1,3 @@
-// components/CTASection
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import '../styles/CTASection.css';
@@ -16,10 +15,11 @@ export default function CTASection() {
       viewport={{ once: true }}
     >
       <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        AI랑 다시 놀아보세요
+        이미지 속 글자를 추출해보세요
       </h2>
       <p className="text-lg text-gray-300 mb-8">
-        20개의 질문으로 당신의 생각을 또 맞춰볼까요?
+        사진 하나로 손쉽게 텍스트를 추출해보세요.<br />
+        지금 바로 AI OCR 기능을 체험해보세요!
       </p>
       <button
         onClick={() => navigate('/question')}

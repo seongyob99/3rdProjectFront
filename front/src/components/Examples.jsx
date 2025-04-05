@@ -1,4 +1,3 @@
-// components/QuestionExamples
 import { motion } from 'framer-motion';
 import '../styles/QuestionExamples.css';
 import '../styles/utils.css'; // ✅ 공통 유틸 스타일 추가
@@ -12,12 +11,12 @@ export default function QuestionExamples() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      <h2 className="section-title">예시 질문</h2>
+      <h2 className="section-title">예시 이미지</h2>
       <ul className="examples-list">
-        <li>당신이 생각한 것은 살아있나요?</li>
-        <li>그것은 유명한 인물인가요?</li>
-        <li>실제로 존재하는 사물인가요?</li>
-        <li>인터넷에서 자주 검색되나요?</li>
+        <li>명함 속 이름, 이메일, 전화번호 인식</li>
+        <li>영수증의 날짜 및 금액 추출</li>
+        <li>문서 이미지에서 본문 텍스트 인식</li>
+        <li>간판이나 표지판의 문구 추출</li>
       </ul>
     </motion.div>
   );

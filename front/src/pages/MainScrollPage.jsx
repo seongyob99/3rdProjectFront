@@ -1,5 +1,5 @@
 import MainPage from '../components/MainPage';
-import QuestionExamples from '../components/QuestionExamples';
+import Examples from '../components/Examples';
 import CTASection from '../components/CTASection';
 import FAQSection from '../components/FAQSection';
 import HowItWorks from '../components/HowItWorks';
@@ -27,7 +27,7 @@ export default function MainScrollPage() {
         </section>
 
         <section id="examples" className="min-h-screen flex items-center justify-center py-24">
-          <QuestionExamples />
+          <Examples />
         </section>
 
         <section id="faq" className="min-h-screen flex items-center justify-center py-24">

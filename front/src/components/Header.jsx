@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header className="header-wrapper">
       <div className="header-title">
-        <button onClick={handleGoHome}>WordGenie</button>
+        <button onClick={handleGoHome}>Textify</button>
       </div>
 
       <nav className="header-nav">

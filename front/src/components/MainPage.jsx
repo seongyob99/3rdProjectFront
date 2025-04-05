@@ -11,7 +11,7 @@ export default function MainPage() {
   const handleStart = () => {
     setIsExiting(true);
     setTimeout(() => {
-      navigate('/question');
+      navigate('/upload'); // 나중에 /upload 등으로 변경 가능
     }, 400);
   };
 
@@ -26,11 +26,11 @@ export default function MainPage() {
           transition={{ duration: 0.4 }}
         >
           <h1 className="main-title text-white">
-            AI가 당신의 생각을 예측합니다
+            AI가 이미지 속 텍스트를 읽어드립니다
           </h1>
           <p className="main-description text-gray-300">
-            20개의 질문을 통해 당신이 떠올린 인물 또는 사물을 <br /> 추론하는
-            인공지능 기반 웹 서비스입니다.
+            사진 속 문서, 명함, 간판, 손글씨까지!<br />
+            이미지를 업로드하면 인공지능이 텍스트를 추출해 보여드립니다.
           </p>
 
           <button
