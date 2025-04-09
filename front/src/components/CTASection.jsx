@@ -22,7 +22,7 @@ export default function CTASection() {
         지금 바로 AI OCR 기능을 체험해보세요!
       </p>
       <button
-        onClick={() => navigate('/question')}
+        onClick={() => navigate('/upload')}
         className="primary-button btn-indigo"
       >
         시작하기

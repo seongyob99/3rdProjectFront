@@ -42,7 +42,7 @@ export default function Header() {
           }}
           className="header-link"
         >
-          예시 질문
+          예시
         </button>
         <button
           onClick={() => {

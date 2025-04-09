@@ -1,0 +1,31 @@
+.result-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  .result-image-box,
+  .result-text-box {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(31, 41, 55, 0.85);
+    overflow: auto;
+    max-height: 50vh;
+  }
+  
+  .result-image-box img {
+    max-width: 100%;
+    max-height: 40vh;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .result-wrapper {
+      flex-direction: row;
+    }
+  }
+  
