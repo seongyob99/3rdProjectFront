@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import '../styles/HowItWorks.css';
-import '../styles/utils.css'; // ✅ 공통 유틸 추가
+import '../styles/utils.css';
 
 export default function HowItWorks() {
   const steps = [

@@ -1,7 +1,7 @@
 // components/Header.jsx
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/Header.css';
-import '../styles/utils.css'; // 공통 유틸 스타일
+import '../styles/utils.css'; 
 
 export default function Header() {
   const navigate = useNavigate();
