@@ -17,7 +17,7 @@ export default function LoadingPage() {
         if (prev < 90 && !isCompleted) return prev + 1;
         return prev;
       });
-    }, 100); // 100ms마다 1% 증가
+    }, 100);
 
     return () => clearInterval(interval);
   }, [isCompleted]);
@@ -41,8 +41,24 @@ export default function LoadingPage() {
         setIsCompleted(true);
 
         const lines = res.data.trim().split("\n");
-        const lastLine = JSON.parse(lines[lines.length - 1]);
 
+        // ✅ 텍스트가 없는 경우 처리
+        const errorLine = lines.find((line) => {
+          try {
+            const parsed = JSON.parse(line);
+            return parsed.statusCode === 1;
+          } catch {
+            return false;
+          }
+        });
+
+        if (errorLine) {
+          alert("이미지에서 텍스트를 찾을 수 없습니다.");
+          navigate("/upload");
+          return;
+        }
+
+        const lastLine = JSON.parse(lines[lines.length - 1]);
         const ocrBoxes = lastLine.result.map((box) => ({
           text: Array.isArray(box.text) ? box.text.join(" ") : box.text,
           startX: box.start_x,
@@ -53,7 +69,6 @@ export default function LoadingPage() {
 
         const resultText = ocrBoxes.map((box) => box.text).join("\n");
 
-        // 자연스럽게 넘어가도록 약간 딜레이
         setTimeout(() => {
           navigate("/result", {
             state: {
